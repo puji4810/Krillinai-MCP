@@ -45,21 +45,19 @@ python krillinai-server.py
 
 要将此服务器集成到 Claude Desktop，您需要编辑其 MCP 服务器配置文件。 在 macOS 上，该文件通常位于`~/Library/Application Support/Claude/claude_desktop_config.json`。
 
-**JSON**
-
-```
+```json
 {
   "mcpServers": {
     "krillinai-mcp-server": {
       "isActive": true, // 设置为 true 来激活
-      "name": "KrillinaiConnector", // 与您 FastMCP("KrillinaiConnector") 中的名称匹配
+      "name": "KrillinaiConnector", 
       "type": "stdio", // 如果使用 stdio
       "description": "Connects to Krillinai for subtitle and media processing.",
-      "command": "/abs/path/to/your/project/.venv/bin/python", // **重要**: 指向虚拟环境中的 Python 解释器
+      "command": "/abs/path/to/your/project/.venv/bin/python", // 指向虚拟环境中的 Python 解释器
       "args": [
         "/abs/path/to/your/project/krillinai-server.py" // 指向您的服务器脚本
         // 如果需要，可以在这里传递命令行参数给您的脚本
-        // 例如: "--krillai-url", "[http://custom-krillai.local:8888](http://custom-krillai.local:8888)"
+        // 例如: "--krillai-url", "http://custom-krillai.local:8888"
       ],
       "env": { // 可选：如果通过环境变量配置 Krillinai URL
         // "KRILLINAI_URL": "http://localhost:8888"
