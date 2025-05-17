@@ -49,21 +49,16 @@ python krillinai-server.py
 {
   "mcpServers": {
     "krillinai-mcp-server": {
-      "isActive": true, // 设置为 true 来激活
+      "isActive": true,
       "name": "KrillinaiConnector", 
-      "type": "stdio", // 如果使用 stdio
+      "type": "stdio",
       "description": "Connects to Krillinai for subtitle and media processing.",
-      "command": "/abs/path/to/your/project/.venv/bin/python", // 指向虚拟环境中的 Python 解释器
+      "command": "/abs/path/to/your/project/.venv/bin/python",
       "args": [
-        "/abs/path/to/your/project/krillinai-server.py" // 指向您的服务器脚本
-        // 如果需要，可以在这里传递命令行参数给您的脚本
-        // 例如: "--krillai-url", "http://custom-krillai.local:8888"
+        "/abs/path/to/your/project/krillinai-server.py" 
       ],
-      "env": { // 可选：如果通过环境变量配置 Krillinai URL
-        // "KRILLINAI_URL": "http://localhost:8888"
-      }
+      "env": {}
     }
-    // 您可能还有其他 MCP 服务器配置...
   }
 }
 ```
